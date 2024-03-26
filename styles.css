@@ -1,0 +1,247 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    font-family: "Frieght Big Pro";
+}
+
+#loader{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#loader #yellow{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: #F5E41B;
+    z-index: 8;
+}
+#loader video{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 7;
+    object-fit: cover;
+}
+#loader h1{
+    font-size: 5.5vw;
+    font-weight: 100;
+    text-align: center;
+    line-height: 5vw;
+    position: relative;
+    z-index: 9;
+}
+#nav{
+    height: 100px;
+    padding: 2.5vw 4vw;
+    position: fixed;
+    z-index: 10;
+}
+
+
+#page-1{
+    height: 100vh;
+    width: 100%;
+    background-color: #F5E41B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#page-1 h1{
+    font-size: 5.5vw;
+    font-weight: 100;
+    text-align: center;
+    line-height: 5vw;
+}
+#page-2{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+    transition: all ease 0.5s;
+}
+
+.container h1{
+    font-size: 5.5vw;
+    font-weight: 100;
+    text-transform: uppercase;
+    position: relative;
+    width: 100%;
+    /* background-color: red; */
+    color: white;
+    z-index: 10;
+    transition: all ease-in 0.2s;
+}
+.container p{
+    font-size: 1.3vw;
+    text-transform: uppercase;
+    color: black;
+}
+
+.moving{
+    display: flex;
+    white-space: nowrap;
+    position: absolute;
+    background-color: #F5E41B;
+    opacity: 0;
+    transition: all ease 0.3s;
+    transform: scaleY(0);
+}
+
+.moving-block{
+    padding: 0.5vw 0;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    animation-name: moving;
+    animation-duration: 7s;
+    animation-timing-function: linear;
+    animation-direction: reverse;
+    animation-iteration-count: infinite;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.hide{
+    height: 100%;
+    width:10%;
+    position: absolute;
+    left: 50%;
+    z-index: 9;
+    background-color: #F5E41B;
+    transform: translateX(-50%);
+}
+.hide-blur1{
+    height: 100%;
+    width:1.5%;
+    position: absolute;
+    left: 43.51%;
+    z-index: 9;
+    background-color: red;
+    background: linear-gradient(to left,#F5E41B,rgba(255, 255, 255, 0));
+}
+.hide-blur2{
+    height: 100%;
+    width: 1.5%;
+    position: absolute;
+    left: 54.99%;
+    z-index: 9;
+    background-color: red;
+    background: linear-gradient(to left,rgba(2,0,0,0),#F5E41B);
+    filter: blur(0.1px);
+}
+@keyframes moving{
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0);
+
+    }
+}
+
+.container h1:hover{
+    font-style: italic;
+    color:black;
+}
+.container:hover .moving{
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+@keyframes imageChange{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+#page-3{
+    min-height: 100vh;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 40px;
+}
+#page-3 .img-col{
+    width: 30%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+#page-3 #mid img{
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+}
+#page-3 .img-col img{
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 600px;
+    position: absolute;
+    transition: all linear 0.2s;
+}
+#page-3 .img-col .img-container{
+    text-align: center;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    width: 100%;
+    background-color: black;
+    overflow: hidden;
+}
+#page-3 .img-col .img-container-mid{
+    text-align: center;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 100%;
+    background-color: black;
+    overflow: hidden;
+}
+
+
+#page-3 h1{
+    font-size: 3vw;
+    font-weight: 100;
+    text-transform: uppercase;
+    color: white;
+    position: absolute;
+}
+#page-3 img:hover{
+    opacity: 0;
+    scale: 1.1;
+}
